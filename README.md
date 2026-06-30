@@ -14,7 +14,7 @@ message framing over a byte stream, and graceful shutdown.
 ```
  producer 1 ┐
  producer 2 ┤── write() ──▶  /tmp/fifo  ──▶  epoll loop  ──▶  framer  ──▶  app.log
- producer N ┘                     (FIFO)              (log_server)    (reassemble)   (rotating)
+ producer N ┘                  (FIFO)       (log_server)   (reassemble)  (rotating)
 ```
 
 Many short-lived **log_client** producers write framed lines into a single
