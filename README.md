@@ -13,7 +13,7 @@ message framing over a byte stream, and graceful shutdown.
 
 ```
  producer 1 ┐
- producer 2 ┤── write() ──▶  /tmp/music_fifo.log  ──▶  epoll loop  ──▶  framer  ──▶  app.log
+ producer 2 ┤── write() ──▶  /tmp/fifo  ──▶  epoll loop  ──▶  framer  ──▶  app.log
  producer N ┘                     (FIFO)              (log_server)    (reassemble)   (rotating)
 ```
 
